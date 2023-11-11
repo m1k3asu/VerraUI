@@ -1,1 +1,9 @@
-<p>landing-page works!</p>
+<p>Master Country List</p>
+
+<select class="form-control" id='masterCountryList' name='masterCountryList'  (change)="selectCountryHandler($event)">
+    <option *ngFor="let item of countryList" [value]="item">
+      {{item}}
+    </option>    
+</select>
+
+

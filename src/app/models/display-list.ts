@@ -1,5 +1,5 @@
 export interface IDisplayList {
-    Id: number;
-    ProjectName: string;
-    Country: string
+    // name: number;
+    // ProjectName: string;
+    // Country: string
 }
