@@ -5,5 +5,34 @@
       {{item}}
     </option>    
 </select>
+<br>
+<br>
+<button  (click)="refrestDataOnToggle()">
+    {{showAddOption? "Show Existing Registered List": "Show Add To Registered List"}}
+ </button>
+ <br>
 
+<hr>
+<div *ngIf="showAddOption;else showRegisteredList">
+    <div class="row">
+        <div> 
+            Add Project Name
+        </div>
+        <div> 
+            <input type="text" id="projectName" >
+        </div>
+        <div> <button (click)="addNewProject()">Add Project/Conutry</button> </div>
+    </div>
+</div>
 
+<ng-template #showRegisteredList>
+    <hr>
+    Project Details List
+    <hr>
+    <ul> 
+        <li *ngFor="let details of projectDetails; let i = index">
+          {{ i + 1 }} - {{ details.name }}  - {{ details.country }}
+        </li>
+      </ul>
+      
+</ng-template>
